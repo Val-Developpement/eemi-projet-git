@@ -10,7 +10,7 @@ class BirthDateValidator(Validator):
         """Check if the birth date is valid."""
         try:
             # Parse the date
-            birth_date = datetime.strptime(self.value, "%Y-%m-%d")
+            birth_date = datetime.strptime(self.value, "%m-%Y-%d")
 
             # Ensure the date is not in the future
             return birth_date <= datetime.now()
