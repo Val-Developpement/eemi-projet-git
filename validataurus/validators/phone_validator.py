@@ -1,6 +1,7 @@
 import phonenumbers
 from validataurus.validators.validator import Validator
 
+
 class PhoneNumberValidator(Validator):
     """Validator for phone numbers."""
 
