@@ -1,0 +1,54 @@
+name: Python Package CI
+
+on:
+  push:
+    branches:
+      - *
+    tags-ignore:
+      - 'v*'
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  ci:
+    name: 🛠 Build, 📦 Install, and ✅ Format
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout Repository
+
+      - uses: actions/setup-python@v5
+        name: Set up Python ${{ matrix.python-version }}
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - run: python -m pip install --upgrade pip
+        name: Upgrade pip
+
+      - run: python -m pip install poetry
+        name: Install Poetry
+
+      - uses: actions/cache@v4
+        name: Cache Virtual Environment
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            venv-${{ runner.os }}-${{ matrix.python-version }}
+
+      - run: |
+          poetry install --no-interaction --no-root
+          poetry install --no-interaction
+        name: Install Dependencies
+
+      - run: poetry run ruff format --diff --check
+        name: Check Code Formatting
+
+      #- run: poetry run python -m unittest discover validataurus/tests
+      #  name: Run Tests
