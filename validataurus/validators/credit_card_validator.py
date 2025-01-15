@@ -1,6 +1,7 @@
 import re
 from validataurus.validators.validator import Validator
 
+
 class CreditCardValidator(Validator):
     """Validator for credit card numbers."""
 

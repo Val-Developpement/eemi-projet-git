@@ -1,6 +1,7 @@
 import re
 from validataurus.validators.validator import Validator
 
+
 class PasswordValidator(Validator):
     """Validator for passwords."""
 
@@ -12,9 +13,9 @@ class PasswordValidator(Validator):
             return False
 
         # Regular expressions for password criteria
-        has_upper = r'[A-Z]'
-        has_lower = r'[a-z]'
-        has_digit = r'[0-9]'
+        has_upper = r"[A-Z]"
+        has_lower = r"[a-z]"
+        has_digit = r"[0-9]"
         has_special = r'[!@#$%^&*(),.?":{}|<>]'
 
         # Check each criterion

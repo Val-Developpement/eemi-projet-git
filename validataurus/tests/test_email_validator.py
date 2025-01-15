@@ -1,6 +1,7 @@
 import unittest
 from validataurus.validators.email_validator import EmailValidator
 
+
 class TestEmailValidator(unittest.TestCase):
     def test_valid_email(self):
         self.assertTrue(EmailValidator("test@example.com").is_valid)
@@ -12,6 +13,7 @@ class TestEmailValidator(unittest.TestCase):
         self.assertFalse(EmailValidator("missing@domain").is_valid)
         self.assertFalse(EmailValidator("@missingusername.com").is_valid)
         self.assertFalse(EmailValidator("username@.com").is_valid)
+
 
 if __name__ == "__main__":
     unittest.main()
