@@ -3,7 +3,7 @@ name: Python Package CI
 on:
   push:
     branches:
-      - *
+      - '*'
     tags-ignore:
       - 'v*'
   pull_request:
