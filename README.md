@@ -4,6 +4,38 @@
 
 ---
 
+## Features
+
+- **Email Validation**: Verify the format and domain of email addresses.
+- **Password Security**: Assess password strength with customizable security rules.
+- **Phone Numbers**: Validate phone numbers for proper formatting and potential regions.
+- **Birth Dates**: Ensure valid and realistic dates of birth.
+- **Credit Card Validation**: Check the format and validity of credit card numbers.
+
+---
+
+## Installation
+
+You can install Validataurus using pip:
+
+```bash
+pip install validataurus
+```
+
+---
+
+## Usage
+
+# TODO: Add usage examples
+
+### Testing
+Make sure the project is installed before running the tests:
+```bash
+make tests
+```
+
+---
+
 ## User Stories
 
 >### User Story 1: Email Validation

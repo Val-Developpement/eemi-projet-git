@@ -1,9 +1,10 @@
 import re
 from validataurus.validators.validator import Validator
 
+
 class EmailValidator(Validator):
     """Validator for email addresses."""
-    
+
     @property
     def is_valid(self) -> bool:
         """Check if the email address is valid."""

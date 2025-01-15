@@ -3,7 +3,7 @@ name: Python Package CI
 on:
   push:
     branches:
-      - *
+      - '*'
     tags-ignore:
       - 'v*'
   pull_request:
@@ -13,7 +13,7 @@ on:
 
 jobs:
   ci:
-    name: 🛠 Build, 📦 Install, and ✅ Format
+    name: 🛠 Build, 📦 Install, ✅ Format and Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -50,5 +50,5 @@ jobs:
       - run: poetry run ruff format --diff --check
         name: Check Code Formatting
 
-      #- run: poetry run python -m unittest discover validataurus/tests
-      #  name: Run Tests
+      - run: poetry run python -m unittest discover validataurus/tests
+        name: Run Tests

@@ -1,6 +1,7 @@
 from datetime import datetime
 from validataurus.validators.validator import Validator
 
+
 class BirthDateValidator(Validator):
     """Validator for birth dates."""
 
