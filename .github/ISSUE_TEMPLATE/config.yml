@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature Request
+    about: Ask for a new feature.
+    url: https://github.com/Val-Developpement/eemi-projet-git/issues/new?template=FEATURE_REQUEST
+  - name: Bug Report
+    about: Create a report of the issue you've encountered.
+    url: https://github.com/Val-Developpement/eemi-projet-git/issues/new?template=BUG_REPORT
+
+    
